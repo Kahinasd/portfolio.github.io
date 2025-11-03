@@ -1,0 +1,1311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Information Systems Engineer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Inconsolata:wght@200..900&family=Proza+Libre:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&family=Roboto+Slab:wght@100..900&family=SUSE+Mono:ital,wght@0,100..800;1,100..800&family=Share+Tech&display=swap" rel="stylesheet">
+  <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+             font-family: 'Inconsolata', monospace;
+            /* font-family: 'DM Serif Text', serif; */
+        }
+
+        :root {
+            --black: #0A0A0A;
+            --white: #FFFFFF;
+            --cream: #F5F1ED;
+            --burgundy: #6B2737;
+            --navy: #1A2332;
+            --gold: #C9A86A;
+            --slate: #4A5568;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--cream);
+            color: var(--black);
+            line-height: 1.6;
+            overflow-x: hidden;
+           
+        }
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--navy);
+            color: var(--white);
+            position: relative;
+            padding: 2rem;
+        }
+
+        .hero-content {
+             max-width: 1200px;
+            display: flex;
+            align-items: center;
+            gap: 4rem;
+            z-index: 2;
+            animation: fadeInUp 1s ease-out;
+
+        }
+        .hero-text {
+    flex: 1;
+    text-align: left;
+}
+
+.hero-text h1 {
+    font-size: 4rem;
+    font-weight: 300;
+    letter-spacing: -2px;
+    margin-bottom: 1rem;
+    animation: slideDown 1s ease-out;
+}
+
+.hero-text .subtitle {
+    font-size: 1.5rem;
+    color: var(--gold);
+    margin-bottom: 2rem;
+    font-weight: 300;
+}
+
+.hero-text p {
+    font-size: 1.1rem;
+    margin-bottom: 3rem;
+    opacity: 0.9;
+    line-height: 1.8;
+}
+
+.hero-image {
+    flex: 0 0 350px;
+    animation: fadeInUp 1s ease-out;
+}
+
+.hero-image img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 12px;
+    border: 4px solid var(--gold);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 768px) {
+    .hero-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-text {
+        text-align: center;
+    }
+
+    .hero-text h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-image {
+        flex: 0 0 300px;
+    }
+
+    .hero-image img {
+        height: 300px;
+    }
+}
+ 
+        /* .hero h1 {
+            font-size: 4rem;
+            font-weight: 300;
+            letter-spacing: -2px;
+            margin-bottom: 1rem;
+            animation: slideDown 1s ease-out;
+        } */
+
+        /* .hero .subtitle {
+            font-size: 1.5rem;
+            color: var(--gold);
+            margin-bottom: 2rem;
+            font-weight: 300;
+        } */
+
+        /* .hero p {
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto 3rem;
+            opacity: 0.9;
+            line-height: 1.8;
+        } */
+
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 3rem;
+            background-color: var(--gold);
+            color: var(--navy);
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 2px;
+            transition: all 0.3s ease;
+            border: 2px solid var(--gold);
+        }
+
+        .cta-button:hover {
+            background-color: transparent;
+            color: var(--gold);
+            transform: translateY(-2px);
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: rgba(26, 35, 50, 0.95);
+            padding: 1.5rem 4rem;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(201, 168, 106, 0.2);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+        }
+
+        nav a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            font-size: 0.95rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        nav a:hover {
+            color: var(--gold);
+        }
+
+        section {
+            padding: 6rem 4rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 3rem;
+            font-weight: 300;
+            margin-bottom: 1rem;
+            color: var(--navy);
+            letter-spacing: -1px;
+           font-family: 'DM Serif Text', serif
+        }
+
+        .section-subtitle {
+            font-size: 1.2rem;
+            color: var(--slate);
+            margin-bottom: 4rem;
+            font-weight: 300;
+        }
+
+       .about-content {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.about-text {
+    line-height: 1.9;
+    font-size: 1.1rem;
+    color: var(--slate);
+    max-width: 100%;
+}
+
+.skills-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    width: 100%;
+}
+
+        .skill-item {
+            padding: 1.5rem;
+            background-color: var(--white);
+            border-left: 4px solid var(--gold);
+            transition: transform 0.3s ease;
+        }
+
+        .skill-item:hover {
+            transform: translateX(10px);
+        }
+
+        .skill-item h3 {
+            color: var(--navy);
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .project-card {
+            background-color: var(--white);
+            overflow: hidden;
+            transition: transform 0.3s ease;
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+        }
+
+ 
+
+.project-image {
+    position: relative;
+    height: 250px; /* fixed height ensures uniform cards */
+    background-color: var(--navy);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border-bottom: 4px solid rgba(255, 215, 0, 0.3);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    padding: 0.5rem; /* adds inner spacing to avoid tight edges */
+    box-sizing: border-box;
+}
+
+.project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* keeps entire image visible */
+    border-radius: 10px;
+    background-color: #fff; /* gives contrast if images have transparency */
+}
+
+
+/* Optional: subtle hover effect */
+.project-card:hover .project-image img {
+    transform: scale(1.02);
+}
+
+
+        /* .project-card:hover .project-image {
+            background-color: var(--burgundy);
+        }
+        .project-card:hover .slider-image {
+    background-color: var(--burgundy);
+} */
+
+        .project-content {
+            padding: 2rem;
+        }
+
+        .project-content h3 {
+            color: var(--navy);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .project-content p {
+            color: var(--slate);
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .tag {
+            padding: 0.4rem 1rem;
+            background-color: var(--cream);
+            color: var(--navy);
+            font-size: 0.85rem;
+            font-weight: 500;
+            border: 1px solid var(--gold);
+        }
+
+        .experience-timeline {
+            position: relative;
+            padding-left: 3rem;
+            margin-top: 3rem;
+        }
+
+        .experience-timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background-color: var(--gold);
+        }
+
+        .timeline-item {
+            margin-bottom: 3rem;
+            position: relative;
+            padding: 2rem;
+            background-color: var(--white);
+            border-left: 4px solid var(--burgundy);
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -3.5rem;
+            top: 2rem;
+            width: 15px;
+            height: 15px;
+            background-color: var(--gold);
+            border: 3px solid var(--navy);
+            border-radius: 50%;
+        }
+
+        .timeline-item h3 {
+            color: var(--navy);
+            margin-bottom: 0.5rem;
+            font-size: 1.4rem;
+        }
+
+        .timeline-date {
+            color: var(--gold);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .academic-section {
+            background-color: var(--navy);
+            color: var(--white);
+            padding: 6rem 4rem;
+            margin: 4rem 0;
+        }
+
+        .academic-section .section-title {
+            color: var(--white);
+        }
+
+        .academic-section .section-subtitle {
+            color: var(--gold);
+        }
+
+        .academic-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .academic-card {
+            padding: 2.5rem;
+            background-color: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(201, 168, 106, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .academic-card:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-color: var(--gold);
+        }
+
+        .academic-card h3 {
+            color: var(--gold);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .academic-card p {
+            line-height: 1.8;
+            opacity: 0.9;
+        }
+
+        .certifications {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .cert-card {
+            padding: 2rem;
+            background-color: var(--white);
+            border-top: 3px solid var(--burgundy);
+            transition: transform 0.3s ease;
+        }
+
+        .cert-card:hover {
+            transform: scale(1.05);
+        }
+
+        .cert-card h3 {
+            color: var(--navy);
+            margin-bottom: 0.5rem;
+        }
+
+        .cert-card p {
+            color: var(--slate);
+        }
+
+        .contact {
+            background-color: var(--burgundy);
+            color: var(--white);
+            text-align: center;
+            padding: 6rem 4rem;
+        }
+
+        .contact .section-title {
+            color: var(--white);
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin-top: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .contact-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .contact-item a {
+            color: var(--gold);
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: color 0.3s ease;
+        }
+
+        .contact-item a:hover {
+            color: var(--white);
+        }
+
+        footer {
+            background-color: var(--black);
+            color: var(--white);
+            text-align: center;
+            padding: 2rem;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        .subsection-title {
+    font-size: 1.8rem;
+    color: var(--burgundy);
+    margin-bottom: 2rem;
+    font-weight: 400;
+}
+
+.cert-highlight {
+    background-color: var(--white);
+    padding: 3rem;
+    border-radius: 12px;
+    border-left: 5px solid var(--gold);
+    margin-bottom: 3rem;
+}
+
+.cert-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.cert-item {
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+    padding: 1.5rem;
+    background-color: var(--cream);
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.cert-item:hover {
+    transform: translateX(5px);
+}
+
+.cert-icon {
+    font-size: 2.5rem;
+    flex-shrink: 0;
+}
+
+.cert-details h4 {
+    color: var(--navy);
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.cert-details p {
+    color: var(--slate);
+    font-size: 0.95rem;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.card-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.skill-icon {
+    font-size: 2rem;
+}
+
+.additional-skills {
+    display: flex-column;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+    padding: 2rem;
+    padding-top: 1.5rem;
+    background-color: var(--white);
+    border-radius: 1px;
+    border-top: 3px solid var(--burgundy);
+}
+
+.skill-category h4 {
+    color: var(--navy);
+    margin-bottom: 1.5rem;
+    margin-top: 1.5rem ;
+    font-size: 1.3rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.skill-tag {
+    padding: 0.6rem 1.2rem;
+    background-color: var(--cream);
+    color: var(--navy);
+    border: 2px solid var(--gold);
+    border-radius: 1px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.skill-tag:hover {
+    background-color: var(--gold);
+    color: var(--white);
+    transform: translateY(-2px);
+}
+
+.project-image-slider {
+    position: relative;
+    height: 250px;
+    overflow: hidden;
+    background-color: var(--navy);
+}
+
+.slider-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.slider-image {
+      width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 10px;
+    background-color: #fff;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.slider-image.active {
+    opacity: 1;
+}
+
+.slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: var(--white);
+    border: none;
+    font-size: 2rem;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    z-index: 10;
+    transition: background-color 0.3s ease;
+    border-radius: 4px;
+}
+
+.slider-btn:hover {
+    background-color: rgba(201, 168, 106, 0.8);
+}
+
+.prev-btn {
+    left: 10px;
+}
+
+.next-btn {
+    right: 10px;
+}
+
+.slider-dots {
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+    z-index: 10;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.dot.active {
+    background-color: var(--gold);
+    width: 12px;
+    height: 12px;
+}
+
+.dot:hover {
+    background-color: var(--white);
+}
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            nav {
+                padding: 1rem 2rem;
+            }
+
+            nav ul {
+                flex-wrap: wrap;
+                gap: 1.5rem;
+            }
+
+            section {
+                padding: 4rem 2rem;
+            }
+
+            .about-content {
+                flex-direction: column;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .skills-list {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<script>
+function changeSlide(btn, direction) {
+    const card = btn.closest('.project-card');
+    const images = card.querySelectorAll('.slider-image');
+    const dots = card.querySelectorAll('.dot');
+    let currentIndex = Array.from(images).findIndex(img => img.classList.contains('active'));
+    
+    images[currentIndex].classList.remove('active');
+    dots[currentIndex].classList.remove('active');
+    
+    currentIndex = (currentIndex + direction + images.length) % images.length;
+    
+    images[currentIndex].classList.add('active');
+    dots[currentIndex].classList.add('active');
+}
+
+function goToSlide(dot, index) {
+    const card = dot.closest('.project-card');
+    const images = card.querySelectorAll('.slider-image');
+    const dots = card.querySelectorAll('.dot');
+    
+    images.forEach(img => img.classList.remove('active'));
+    dots.forEach(d => d.classList.remove('active'));
+    
+    images[index].classList.add('active');
+    dots[index].classList.add('active');
+}
+</script>
+
+<body>
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#academic">Academic</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero" id="home">
+        <div class="hero-content">
+         <div class="hero-text">
+            <h1 style=" font-family: 'DM Serif Text', serif; margin-top: 60px;">Saadaoui Kahina Houda</h1>
+            <p class="subtitle" >Information Systems & Technologies Engineer student</p>
+            <p > Final-year engineering student curious about bridging technology and business through data-driven and user-focused solutions. 
+            Specialized in full-stack development — especially front-end — and passionate about enterprise systems (Odoo ERP, BI, CRM) and intelligent applications that enhance efficiency and decision-making.</p>
+            <a href="#projects" class="cta-button">View My Work</a>
+         </div> 
+
+           <div class="hero-image">
+            <img src="your-image.jpg" alt=" Houda ">
+          </div>
+        </div>
+    </section>
+
+    <section id="about">
+        <h2 class="section-title">About Me</h2>
+        <p class="section-subtitle">Building the future, one system at a time</p>
+        <div class="about-content">
+            <div class="about-text">
+                           <p>As a final-year Information Systems Engineering student, I combine technical expertise with analytical and creative thinking. My journey has evolved from crafting intuitive user interfaces to exploring enterprise-oriented solutions, understanding business workflows, and collaborating with teams on impactful web applications.</p>
+                <br>
+                 <p>My final year project focuses on Named Entity Recognition (NER) in Social Media Texts, exploring Natural Language Processing (NLP) and deep learning.</p>
+        <br>
+                <p>I'm motivated by the challenge of building systems that merge efficiency, intelligence, and user experience. I thrive in environments where innovation meets real-world business needs.</p>
+                <br>
+               
+           
+           
+            </div>
+            <div class="skills-list">
+                <div class="skill-item">
+                    <h3>Full-Stack Development</h3>
+                    <p>Building scalable web applications with modern frameworks (React, kotlin , tailwind..)</p>
+                </div>
+
+                 <div class="skill-item">
+                    <h3>Data & Machine Learning</h3>
+                    <p>Exploratory analysis, predictive modeling, and intelligent automation</p>
+                </div>
+                <div class="skill-item">
+                    <h3>UI/UX Design</h3>
+                    <p>User-centered design principles</p>
+                </div>
+                <div class="skill-item">
+                    <h3> Business Systems & ERP</h3>
+                   <p>Understanding and analyzing enterprise workflows to enhance efficiency and process integration</p>    </div>
+                <div class="skill-item">
+                    <h3>Team Collaboration</h3>
+                    <p>Agile methodologies version control (Git), and cross-functional teamwork</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <h2 class="section-title">Featured Projects</h2>
+        <p class="section-subtitle">A showcase of innovation and technical excellence</p>
+        <div class="projects-grid">
+            <!-- <div class="project-card">
+                <div class="project-image">🎨</div>
+
+                <div class="project-content">
+                    <h3>E-Commerce Platform Design</h3>
+                    <p>Designed and developed a complete e-commerce solution with modern UI/UX, featuring responsive design, seamless checkout flow, and integrated payment systems.</p>
+                    <div class="project-tags">
+                        <span class="tag">Design</span>
+                        <span class="tag">React</span>
+                        <span class="tag">Node.js</span>
+                        <span class="tag">PostgreSQL</span>
+                    </div>
+                </div>
+            </div> -->
+         
+           
+
+              <div class="project-card">
+                 <div class="project-image">
+                  
+                         
+                       <div class="slider-container">
+                            <img src="66.png" alt="MK Platform - Image 1" class="slider-image active" style=" background-color: #151618">
+                            <img src="67.png" alt="MK Platform - Image 2" class="slider-image" style=" background-color: #151618">
+                            <img src="68.png" alt="MK Platform - Image 3" class="slider-image" style=" background-color: #151618">
+                            <img src="69.png" alt="MK Platform - Image 4" class="slider-image" style=" background-color: #151618">
+                            <img src="61.png" alt="MK Platform - Image 5" class="slider-image" style=" background-color: #151618">
+                            <img src="62.png" alt="MK Platform - Image 6" class="slider-image" style=" background-color: #151618">
+                            <img src="63.png" alt="MK Platform - Image 7" class="slider-image" style=" background-color: #151618">
+                            
+                        </div>
+                        <button class="slider-btn prev-btn" onclick="changeSlide(this, -1)">‹</button>
+                        <button class="slider-btn next-btn" onclick="changeSlide(this, 1)">›</button>
+                        <div class="slider-dots">
+                            <span class="dot active" onclick="goToSlide(this, 0)"></span>
+                            <span class="dot" onclick="goToSlide(this, 1)"></span>
+                            <span class="dot" onclick="goToSlide(this, 2)"></span>
+                            <span class="dot" onclick="goToSlide(this, 3)"></span>
+                                <span class="dot" onclick="goToSlide(this, 4)"></span>
+                                    <span class="dot" onclick="goToSlide(this, 5)"></span>
+                                        <span class="dot" onclick="goToSlide(this, 6)"></span>
+                        </div>
+               
+
+
+                </div>
+                <div class="project-content">
+                    <h3>Amine Kais Production Portfolio</h3>
+                    <p>
+                         Developed a cinematic and interactive portfolio website for the Algerian-American producer Amine Kais, highlighting film projects, production reels, and professional collaborations.
+      <br>  The platform focuses on visual storytelling, responsive design, and smooth multimedia integration to enhance brand identity. 
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">Multimedia</span>
+                        <span class="tag">Portfolio Website</span>
+                        <span class="tag">HTML/CSS</span>
+                    
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-image">
+                   
+                       <div class="slider-container">
+                            <img src="26.png" alt="Sonatrach Platform - Image 1" class="slider-image active">
+                            <img src="27.jpeg" alt="Sonatrach Platform - Image 2" class="slider-image">
+                            <img src="28.jpeg" alt="Sonatrach Platform - Image 3" class="slider-image">
+                            <img src="29.jpeg" alt="Sonatrach Platform - Image 4" class="slider-image">
+                          
+                        </div>
+                        <button class="slider-btn prev-btn" onclick="changeSlide(this, -1)">‹</button>
+                        <button class="slider-btn next-btn" onclick="changeSlide(this, 1)">›</button>
+                        <div class="slider-dots">
+                            <span class="dot active" onclick="goToSlide(this, 0)"></span>
+                            <span class="dot" onclick="goToSlide(this, 1)"></span>
+                            <span class="dot" onclick="goToSlide(this, 2)"></span>
+                            <span class="dot" onclick="goToSlide(this, 3)"></span>
+                              
+                        </div> 
+                </div>
+                <div class="project-content">
+                    <h3>Sonatrach – Reporting & Monitoring Platform</h3>
+                    <p>
+                        A web platform developed to monitor drilling operations, track project costs and delays,and generate dashboards with automated alerts.
+                        The system enhances operational visibility, supports cost control, and assists management in making data-driven decisions across oil field operations.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">Web App</span>
+                        <span class="tag">Data Visualization</span>
+                        <span class="tag">Dashboards</span>
+                        <span class="tag">Automation</span>
+                    </div>
+                </div>
+            </div> 
+
+             <div class="project-card">
+               <div class="project-image">
+                  
+                        <div class="slider-container">
+                    <img src="36.png" alt="maqaal  Platform - Image 1" class="slider-image active">
+                    <img src="37.png" alt="maqaal  Platform - Image 2" class="slider-image">
+                    <img src="38.png" alt="maqaal  Platform - Image 3" class="slider-image">
+                    <img src="39.png" alt="maqaal  Platform - Image 4" class="slider-image">
+                    <img src="399.png" alt="maqaal  Platform - Image 5" class="slider-image">
+                        </div>
+                        <button class="slider-btn prev-btn" onclick="changeSlide(this, -1)">‹</button>
+                        <button class="slider-btn next-btn" onclick="changeSlide(this, 1)">›</button>
+                        <div class="slider-dots">
+                            <span class="dot active" onclick="goToSlide(this, 0)"></span>
+                            <span class="dot" onclick="goToSlide(this, 1)"></span>
+                            <span class="dot" onclick="goToSlide(this, 2)"></span>
+                            <span class="dot" onclick="goToSlide(this, 3)"></span>
+                                <span class="dot" onclick="goToSlide(this, 4)"></span>
+                        </div>
+
+
+                </div>
+                <div class="project-content">
+                    <h3>Maqaal – Scientific Article Management Platform</h3>
+                    <p>
+                        Developed the front-end of Maqaal, a web application designed to simplify the exploration and management of scientific articles. The platform enables users to browse research papers efficiently through an intuitive and responsive interface.
+                        <br>Collaborated with the backend team integrating keyword extraction and full-text search powered by Elasticsearch — supporting scalable and user-friendly content management.
+                    </p>
+                    <div class="project-tags">
+                        
+                            <span class="tag">React</span>
+                            
+                            <span class="tag">Elasticsearch</span>
+                            <span class="tag">Research Platform</span>
+                            <span class="tag">Team Project</span>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="project-card">
+            <div class="project-image">
+                <div class="slider-container">
+                    <img src="46.png" alt="Kherja Platform - Image 1" class="slider-image active">
+                    <img src="47.png" alt="Kherja Platform - Image 2" class="slider-image">
+                    <img src="48.png" alt="Kherja Platform - Image 3" class="slider-image">
+                    <img src="49.png" alt="Kherja Platform - Image 4" class="slider-image">
+                    <img src="499.png" alt="Kherja Platform - Image 5" class="slider-image">
+                </div>
+                <button class="slider-btn prev-btn" onclick="changeSlide(this, -1)">‹</button>
+                <button class="slider-btn next-btn" onclick="changeSlide(this, 1)">›</button>
+                <div class="slider-dots">
+                    <span class="dot active" onclick="goToSlide(this, 0)"></span>
+                    <span class="dot" onclick="goToSlide(this, 1)"></span>
+                    <span class="dot" onclick="goToSlide(this, 2)"></span>
+                      <span class="dot" onclick="goToSlide(this, 3)"></span>
+                        <span class="dot" onclick="goToSlide(this, 4)"></span>
+                </div>
+            </div>
+            <div class="project-content">
+                <h3>Kherja – E-Tourism Platform</h3>
+                <p>Developed among my team a web platform prototype for the Algerian Ministry of Tourism to promote national destinations and showcase the country's cultural and historical heritage. <br><br>The solution focuses on personalized travel planning and interactive guides to enhance user engagement and visibility of local tourism offers. <br><br></p>
+                <div class="project-tags">
+                    <span class="tag">Web App</span>
+                    <span class="tag">E-Tourism</span>
+                    <span class="tag">Project management</span>
+                    <span class="tag">Figma</span>
+                </div>
+            </div>
+           </div>
+
+
+     
+              <div class="project-card">
+                   <div class="project-image">
+                    <img src="image.png" alt="odoo erp Platform" style="width:100%; border-radius: 12px;">
+                </div>
+                <div class="project-content">
+                    <h3>Odoo ERP – Complaint Management System</h3>
+                   <p>
+                    Developed and configured a custom Complaint Management System in Odoo for AlMiyah Djazair, streamlining complaint handling through automated categorization, multi-channel registration, and workflow integration.
+                     <br> <br>   The project involved coding a new module, parameterizing existing Odoo modules, and implementing a real-time KPI dashboard to enhance efficiency, transparency, and data-driven decision-making 
+                  </p>
+           <div class="project-tags">
+        
+                        <span class="tag">ERP</span>
+                        <span class="tag">Business Automation</span>
+                        <span class="tag">Python</span>
+                        <span class="tag">PostgreSQL</span>
+                        <span class="tag">XML</span>
+                    </div>
+                </div>
+            </div>
+
+           
+            <div class="project-card">
+                <div class="project-image">
+                    
+               
+                       <div class="slider-container">
+                            <img src="56.png" alt="M Platform - Image 1" class="slider-image active">
+                            <img src="57.png" alt="M Platform - Image 2" class="slider-image">
+                            <img src="58.png" alt="M Platform - Image 3" class="slider-image">
+                            <img src="59.png" alt="M Platform - Image 4" class="slider-image">
+                            <img src="599.png" alt="M Platform - Image 5" class="slider-image">
+                            <img src="5999.png" alt="M Platform - Image 6" class="slider-image">
+                            <img src="594.png" alt="M Platform - Image 7" class="slider-image">
+                            
+                        </div>
+                        <button class="slider-btn prev-btn" onclick="changeSlide(this, -1)">‹</button>
+                        <button class="slider-btn next-btn" onclick="changeSlide(this, 1)">›</button>
+                        <div class="slider-dots">
+                            <span class="dot active" onclick="goToSlide(this, 0)"></span>
+                            <span class="dot" onclick="goToSlide(this, 1)"></span>
+                            <span class="dot" onclick="goToSlide(this, 2)"></span>
+                            <span class="dot" onclick="goToSlide(this, 3)"></span>
+                                <span class="dot" onclick="goToSlide(this, 4)"></span>
+                                    <span class="dot" onclick="goToSlide(this, 5)"></span>
+                                        <span class="dot" onclick="goToSlide(this, 6)"></span>
+                        </div>
+               
+               
+                </div>
+                <div class="project-content">
+                    <h3>ESI Maintenance Platform</h3>
+                    <p>Participated in developing a maintenance management web platform for ESI equipment, enabling users to report technical issues and track repair requests in real time.
+                     <br> <br>The platform improves maintenance workflows and response speed through automated ticket handling and progress tracking
+                   <br><br><br> </p>
+                    <div class="project-tags">
+                        <span class="tag">Workflow Automation</span>
+                        <span class="tag">Web App</span>
+                        
+                        <span class="tag">Maintenance System</span>
+                    </div>
+                </div>
+            </div>
+
+           <div class="project-card">
+                <div class="project-image">
+                    <img src="116.png" alt="Rawda - Daycare Search Platform" style="width:100%; border-radius: 12px;">
+                </div>
+                
+                <div class="project-content">
+                    <h3>Rawda – Daycare Search Engine</h3>
+                    <p>
+                        A web application developed using the MERN stack, designed to help parents search, filter, and compare daycare centers based on location, services, and availability. 
+                        <br> <br>As a front-end team member, I contributed to building the user interface and ensuring a responsive, intuitive, and user-friendly experience.
+                    <br>
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">MERN</span>
+                        <span class="tag">React</span>
+                        <span class="tag">Frontend</span>
+                        <span class="tag">UI/UX</span>
+                        <span class="tag">Team Project</span>
+                    </div>
+                </div>
+            </div>
+
+              <div class="project-card">
+                  <div class="project-image">
+                    <img src="76.png" alt="marketopia Platform" style="width:100%; border-radius: 12px;">
+                </div>
+                <div class="project-content">
+                    <h3>Marketopia – Digital Marketing courses Platform</h3>
+                    <p>
+Designed Marketopia, a user-friendly web platform connecting professionals and users to digital marketing services and training.
+ <br>Users can browse tailored packs, view prices, and enroll in courses designed to strengthen their digital strategy.
+                  <br>   </p>
+                    <div class="project-tags">
+                        <span class="tag">Digital Marketing</span>
+                        <span class="tag">React</span>
+                        <span class="tag">Web platform </span>
+                       
+                    </div>
+                </div>
+            </div>
+
+           
+        </div>
+    </section>
+
+    <section id="experience">
+        <h2 class="section-title">Professional Experience</h2>
+        <p class="section-subtitle">Hands-on expertise across diverse projects</p>
+        <div class="experience-timeline">
+          
+
+           <div class="timeline-item">
+                <h3>Web Developer </h3>
+                <div class="timeline-date">2025 – Present</div>
+                <p>
+                    Built and customized client websites using modern web technologies. 
+                    Focused on creating responsive, visually consistent interfaces aligned with each brand’s digital identity. 
+                    Collaborated with clients and teams to ensure smooth integration between content, design, and functionality.
+                </p>
+            </div>
+
+            <div class="timeline-item">
+                <h3>Brand Presenter – Communication Agency</h3>
+                <div class="timeline-date">2025 – Present</div>
+                <p>
+                    Represented the agency’s clients through digital campaigns and brand showcases. 
+                    Gained a deep understanding of digital marketing, audience engagement, and communication strategies — strengthening my interest in how marketing and technology intersect to drive sales and business growth.
+                </p>
+            </div>
+
+
+           
+        </div>
+    </section>
+
+    <div class="academic-section" id="academic">
+    <h2 class="section-title">Academic Excellence</h2>
+    <p class="section-subtitle">Building a strong theoretical foundation</p>
+    <div class="academic-grid">
+        
+        <div class="academic-card">
+            <h3 style="font-family: 'DM Serif Text', serif;">Current Studies</h3>
+            <p>
+                <strong>Information Systems Engineering</strong><br>
+                Final-Year Student<br><br>
+                Comprehensive training in system design, data management, software engineering, and enterprise architecture — enriched by practical projects in full-stack development, data analysis, and business systems.
+            </p>
+        </div>
+
+        <div class="academic-card">
+            <h3 style="font-family: 'DM Serif Text', serif;">Research Interests</h3>
+            <p>
+               
+                Final-year research project on <strong>Named Entity Recognition (NER) in Social Media Texts</strong>: <br> exploring how Natural Language Processing (NLP) and deep learning can enhance information extraction from unstructured online data.
+            <br> <br> Research Interests : Applied Artificial Intelligence, Data-Driven Systems, Enterprise Solutions, and Information Systems Architecture. 
+            
+            </p>
+        </div>
+
+        <div class="academic-card">
+            <h3 style="font-family: 'DM Serif Text', serif;">Future Goals</h3>
+            <p>
+                <strong>Master's in Applied Computer Methods</strong><br><br>
+                Aiming to deepen expertise in intelligent information systems by combining research in AI and NLP with real-world applications that optimize organizational decision-making and digital transformation.
+            </p>
+        </div>
+        
+    </div>
+    </div>
+
+
+   <section>
+    <h2 class="section-title">Certifications & Skills</h2>
+    <p class="section-subtitle">Continuous learning and professional development</p>
+
+    <!-- Certifications Section -->
+    <div class="cert-highlight">
+        <h3 class="subsection-title">Professional Certifications</h3>
+        <div class="cert-list">
+            <div class="cert-item">
+          
+                <div class="cert-details">
+                    <h4>Fundamentals of Digital Marketing</h4>
+                    <p>Google</p>
+                </div>
+            </div>
+            <div class="cert-item">
+                
+                <div class="cert-details">
+                    <h4>Introduction to Transformers and Attention Mechanisms</h4>
+                    <p>Advanced AI/ML</p>
+                </div>
+            </div>
+            <div class="cert-item">
+
+                <div class="cert-details">
+                    <h4>Machine Learning /deep learning</h4>
+                    <p>Kaggle</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Technical Skills Grid -->
+    <h3 class="subsection-title" style="margin-top: 4rem;">Technical Expertise</h3>
+    <div class="skills-grid">
+        <div class="cert-card">
+            <div class="card-header">
+                
+                <h3>Web Development</h3>
+            </div>
+            <p>HTML5, CSS3, JavaScript, React, Kotlin (Jetpack Compose)</p>
+        </div>
+
+        <div class="cert-card">
+            <div class="card-header">
+                
+                <h3>Backend & Databases</h3>
+            </div>
+            <p>Python, Django, PostgreSQL, MySQL</p>
+        </div>
+
+        <div class="cert-card">
+            <div class="card-header">
+                
+                <h3>ERP & Business Systems</h3>
+            </div>
+            <p>Odoo Development, Business Process Analysis, Workflow Optimization</p>
+        </div>
+
+       
+    </div>
+
+    <!-- Additional Skills -->
+    <div class="additional-skills">
+        
+        <div class="skill-category">
+            <h4> Soft Skills</h4>
+            <div class="skill-tags">
+                  <span class="skill-tag">Business Acumen</span>
+                    <span class="skill-tag">Requirements Gathering</span>
+                <span class="skill-tag">System Thinking</span>
+                         <span class="skill-tag">Team  Collaboration </span>
+                <span class="skill-tag">Communication</span>
+                <span class="skill-tag">Adaptability</span>
+       
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    <section class="contact" id="contact">
+        <h2 class="section-title">Let's Connect</h2>
+        <p style="margin-top: 1rem; font-size: 1.1rem;">I'm always open to discussing new projects, opportunities, or collaborations.</p>
+        <div class="contact-info">
+            <div class="contact-item">
+              
+                <a href="kahinahouda.saadaoui@gmail.com">kahinahouda.saadaoui@gmail.com</a>
+            </div>
+            <div class="contact-item">
+              
+                <a href="https://linkedin.com/in/kahina-houda-saadaoui-0052242a7" target="_blank">LinkedIn</a>
+            </div>
+        
+            <div class="contact-item">
+               
+                <a href="tel:+213560197501">+213 560197501</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Saadaoui Kahina Houda. Crafted with precision and passion.</p>
+    </footer>
+</body>
+</html>
