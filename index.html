@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Inconsolata:wght@200..900&family=Proza+Libre:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&family=Roboto+Slab:wght@100..900&family=SUSE+Mono:ital,wght@0,100..800;1,100..800&family=Share+Tech&display=swap" rel="stylesheet">
   <style>
+
         * {
             margin: 0;
             padding: 0;
@@ -77,7 +78,7 @@
 
 .hero-text p {
     font-size: 1.1rem;
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
     opacity: 0.9;
     line-height: 1.8;
 }
@@ -201,7 +202,7 @@
         .section-title {
             font-size: 3rem;
             font-weight: 300;
-            margin-bottom: 1rem;
+            margin-bottom: 0.5rem;
             color: var(--navy);
             letter-spacing: -1px;
            font-family: 'DM Serif Text', serif
@@ -221,8 +222,8 @@
 }
 
 .about-text {
-    line-height: 1.9;
-    font-size: 1.1rem;
+    line-height: 1.6;
+    font-size: 1rem;
     color: var(--slate);
     max-width: 100%;
 }
@@ -409,7 +410,7 @@
         }
 
         .academic-card {
-            padding: 2.5rem;
+            padding: 2rem;
             background-color: rgba(255, 255, 255, 0.05);
             border: 1px solid rgba(201, 168, 106, 0.3);
             transition: all 0.3s ease;
@@ -756,6 +757,106 @@
                 grid-template-columns: 1fr;
             }
         }
+
+        /* high card  */
+  
+   /* Divider subtil */
+.section-divider {
+    width: 80px;
+    height: 2px;
+    background: var(--gold);
+    margin: 3rem auto;
+    opacity: 0.6;
+}
+
+/* Next Steps - design moderne et élégant */
+.academic-card-highlight {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0;
+    background-color: transparent;
+    border: none;
+}
+
+.highlight-content {
+    display: flex;
+    gap: 2rem;
+    align-items: flex-start;
+    padding: 2.5rem;
+    background-color: rgba(255, 255, 255, 0.08);
+    border-left: 4px solid var(--gold);
+    transition: all 0.3s ease;
+}
+
+.highlight-icon {
+    font-size: 3rem;
+    color: var(--gold);
+    font-weight: 300;
+    line-height: 1;
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+}
+
+.highlight-text {
+    flex: 1;
+}
+
+.highlight-text h3 {
+    color: var(--gold) !important;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.highlight-text strong {
+    color: var(--white);
+}
+
+.highlight-text p {
+    line-height: 1.8;
+    opacity: 0.95;
+}
+
+.academic-card-highlight:hover .highlight-content {
+    background-color: rgba(255, 255, 255, 0.12);
+    border-left-width: 6px;
+}
+
+.academic-card-highlight:hover .highlight-icon {
+    transform: translateX(5px);
+}
+
+@media (max-width: 768px) {
+    .highlight-content {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .highlight-icon {
+        font-size: 2rem;
+    }
+}
+
+/* Carte Samsung mise en avant */
+.cert-item-featured {
+    grid-column: 1 / -1; /* Prend toute la largeur */
+    background: linear-gradient(to right, rgba(201, 168, 106, 0.1), rgba(201, 168, 106, 0.05));
+    border-left: 4px solid var(--gold);
+    padding: 2rem;
+}
+
+.cert-item-featured h4 {
+    font-size: 1.3rem;
+    color: var(--navy);
+    margin-bottom: 0.5rem;
+}
+
+.cert-item-featured strong {
+    color: var(--burgundy);
+}
+
+.cert-item-featured p {
+    margin-bottom: 0;
+}
     </style>
 </head>
 <script>
@@ -804,8 +905,10 @@ function goToSlide(dot, index) {
          <div class="hero-text">
             <h1 style=" font-family: 'DM Serif Text', serif; margin-top: 60px;">Saadaoui Kahina Houda</h1>
             <p class="subtitle" >Information Systems & Technologies Engineer student</p>
-            <p > Final-year engineering student curious about bridging technology and business through data-driven and user-focused solutions. 
-            Specialized in full-stack development — especially front-end — and passionate about enterprise systems (Odoo ERP, BI, CRM) and intelligent applications that enhance efficiency and decision-making.</p>
+            <p >
+               Final-year engineering student passionate about bridging technology and business through innovative, user-focused solutions. Specialized in full-stack development with a strong focus on front-end. 
+               <br>Curious about data-driven approaches , enterprise systems and intelligent applications that enhance organizational efficiency and strategic decision-making.
+            </p>
             <a href="#projects" class="cta-button">View My Work</a>
          </div> 
 
@@ -820,16 +923,17 @@ function goToSlide(dot, index) {
         <p class="section-subtitle">Building the future, one system at a time</p>
         <div class="about-content">
             <div class="about-text">
-                           <p>As a final-year Information Systems Engineering student, I combine technical expertise with analytical and creative thinking. My journey has evolved from crafting intuitive user interfaces to exploring enterprise-oriented solutions, understanding business workflows, and collaborating with teams on impactful web applications.</p>
+                <p>As a final-year Information Systems Engineering student, I thrive at the intersection of technology and business strategy. My journey spans from designing intuitive user interfaces to architecting enterprise solutions, with a growing focus on data-driven intelligence and digital transformation.</p>
                 <br>
-                 <p>My final year project focuses on Named Entity Recognition (NER) in Social Media Texts, exploring Natural Language Processing (NLP) and deep learning.</p>
-        <br>
-                <p>I'm motivated by the challenge of building systems that merge efficiency, intelligence, and user experience. I thrive in environments where innovation meets real-world business needs.</p>
+                <p>I believe technology should empower organizations and people. Whether developing full-stack applications, analyzing complex datasets, or optimizing business processes through ERP systems, I approach each project with both technical rigor and strategic thinking.</p>
                 <br>
-               
-           
-           
+                <p>Currently, I'm completing my final year project on Named Entity Recognition (NER) in Social Media Texts, diving deep into Natural Language Processing and deep learning to extract meaningful insights from unstructured data.</p>
+                <br>
+                <p>What drives me? The challenge of transforming abstract ideas into tangible solutions that enhance efficiency, support decision-making, and create real business value.</p>
             </div>
+
+
+
             <div class="skills-list">
                 <div class="skill-item">
                     <h3>Full-Stack Development</h3>
@@ -845,7 +949,7 @@ function goToSlide(dot, index) {
                     <p>User-centered design principles</p>
                 </div>
                 <div class="skill-item">
-                    <h3> Business Systems & ERP</h3>
+                    <h3> Business Systems</h3>
                    <p>Understanding and analyzing enterprise workflows to enhance efficiency and process integration</p>    </div>
                 <div class="skill-item">
                     <h3>Team Collaboration</h3>
@@ -857,7 +961,7 @@ function goToSlide(dot, index) {
 
     <section id="projects">
         <h2 class="section-title">Featured Projects</h2>
-        <p class="section-subtitle">A showcase of innovation and technical excellence</p>
+        <p class="section-subtitle">A showcase of innovation and technical experience</p>
         <div class="projects-grid">
             <!-- <div class="project-card">
                 <div class="project-image">🎨</div>
@@ -1167,9 +1271,9 @@ Designed Marketopia, a user-friendly web platform connecting professionals and u
         </div>
     </section>
 
-    <div class="academic-section" id="academic">
-    <h2 class="section-title">Academic Background</h2>
-    <p class="section-subtitle">Building a strong theoretical foundation</p>
+ <div class="academic-section" id="academic">
+    <h2 class="section-title">Academic Excellence</h2>
+    <p class="section-subtitle">Building a strong foundation for digital innovation</p>
     <div class="academic-grid">
         
         <div class="academic-card">
@@ -1177,107 +1281,132 @@ Designed Marketopia, a user-friendly web platform connecting professionals and u
             <p>
                 <strong>Information Systems Engineering</strong><br>
                 Final-Year Student<br><br>
-                Comprehensive training in system design, data management, software engineering, and enterprise architecture — enriched by practical projects in full-stack development, data analysis, and business systems.
+                Comprehensive training combining 
+                 software engineering / data management / enterprise architecture / business process optimization. <br> <br>Hands-on experience through projects in full-stack development, intelligent systems, and ERP solutions.
             </p>
         </div>
 
         <div class="academic-card">
-            <h3 style="font-family: 'DM Serif Text', serif;">Research Interests</h3>
+            <h3 style="font-family: 'DM Serif Text', serif;">Final Year Project</h3>
             <p>
-               
-                Final-year research project on <strong>Named Entity Recognition (NER) in Social Media Texts</strong>: <br> exploring how Natural Language Processing (NLP) and deep learning can enhance information extraction from unstructured online data.
-            <br> <br> Research Interests : Applied Artificial Intelligence, Data-Driven Systems, Enterprise Solutions, and Information Systems Architecture. 
-            
+                <strong>Named Entity Recognition in Social Media Texts</strong><br><br>
+                Developing an NLP-powered system to automatically identify & classify key entities (people, orgs, locations, events) from unstructured social media content. <br> The project leverages deep learning architectures to tackle challenges like abbreviations and multilingual contexts, demonstrating how AI can transform raw social data into structured, actionable insights for bi and decision support.
             </p>
         </div>
 
         <div class="academic-card">
-            <h3 style="font-family: 'DM Serif Text', serif;">Future Goals</h3>
+            <h3 style="font-family: 'DM Serif Text', serif;">Research Interests & Vision</h3>
             <p>
-                <strong>Master's in Applied Computer Methods</strong><br><br>
-                Aiming to deepen expertise in intelligent information systems by combining research in AI and NLP with real-world applications that optimize organizational decision-making and digital transformation.
+                <strong>Applied AI • Data Intelligence • Digital Transformation</strong><br><br>
+                Passionate about exploring how artificial intelligence and data science can solve real business challenges. Particularly interested in Natural Language Processing, predictive analytics, intelligent automation, and enterprise information systems that drive strategic decision-making and organizational efficiency.
             </p>
         </div>
         
     </div>
-    </div>
 
+    <!-- Séparateur visuel subtil -->
+    <div class="section-divider"></div>
+
+    <!-- Next Steps en bas, pleine largeur -->
+    <div class="academic-card-highlight">
+        <div class="highlight-content">
+            <div class="highlight-icon">→</div>
+            <div class="highlight-text">
+                <h3 style="font-family: 'DM Serif Text', serif;">Next Steps</h3>
+                <p> 
+                    <strong>Master's in Applied Methods for Business Management</strong><br><br>
+                    Pursuing advanced studies to deepen my expertise in digital transformation strategies, AI/ML applications and data valorization. 
+                    <br><br> 
+                    <strong>Goal:</strong> become a versatile engineer capable of designing intelligent systems that bridge technology and business value in tomorrow's data-driven organizations.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
 
    <section>
     <h2 class="section-title">Certifications & Skills</h2>
     <p class="section-subtitle">Continuous learning and professional development</p>
-
+    
     <!-- Certifications Section -->
     <div class="cert-highlight">
-        <h3 class="subsection-title">Professional Certifications</h3>
+        <h3 class="subsection-title">Professional Certifications & Training</h3>
         <div class="cert-list">
-            <div class="cert-item">
-          
+            <div class="cert-item cert-item-featured">
                 <div class="cert-details">
-                    <h4>Fundamentals of Digital Marketing</h4>
-                    <p>Google</p>
+                    <h4>Samsung Innovation Campus – AI & Machine Learning</h4>
+                    <p><strong>11/2025 – Present</strong></p>
+                    <p style="margin-top: 0.5rem;">Intensive 3-month in-person program covering ML, Deep Learning, NLP, and Computer Vision. Completing a Capstone Project involving end-to-end AI model development and deployment using TensorFlow, PyTorch, Keras, OpenCV, and Scikit-learn.</p>
                 </div>
             </div>
+            
             <div class="cert-item">
-                
                 <div class="cert-details">
                     <h4>Introduction to Transformers and Attention Mechanisms</h4>
                     <p>Advanced AI/ML</p>
                 </div>
             </div>
+            
             <div class="cert-item">
-
                 <div class="cert-details">
-                    <h4>Machine Learning /deep learning</h4>
+                    <h4>Machine Learning / Deep Learning</h4>
                     <p>Kaggle</p>
+                </div>
+            </div>
+            
+            <div class="cert-item">
+                <div class="cert-details">
+                    <h4>Fundamentals of Digital Marketing</h4>
+                    <p>Google</p>
                 </div>
             </div>
         </div>
     </div>
-
+    
     <!-- Technical Skills Grid -->
     <h3 class="subsection-title" style="margin-top: 4rem;">Technical Expertise</h3>
     <div class="skills-grid">
         <div class="cert-card">
             <div class="card-header">
-                
                 <h3>Web Development</h3>
             </div>
-            <p>HTML5, CSS3, JavaScript, React, Kotlin (Jetpack Compose)</p>
+            <p>HTML5, CSS3, JavaScript, React, Kotlin (Jetpack Compose), tailwind</p>
         </div>
-
+        
         <div class="cert-card">
             <div class="card-header">
-                
                 <h3>Backend & Databases</h3>
             </div>
             <p>Python, Django, PostgreSQL, MySQL</p>
         </div>
-
+        
         <div class="cert-card">
             <div class="card-header">
-                
-                <h3>ERP & Business Systems</h3>
+                <h3>ML & Data </h3>
             </div>
-            <p>Odoo Development, Business Process Analysis, Workflow Optimization</p>
+            <p>Scikit-learn,Pandas, Matplotlib ,Pandas,Seaborn,TensorFlow, R consol</p>
         </div>
-
-       
+        
+        <div class="cert-card">
+            <div class="card-header">
+                <h3>Business Systems</h3>
+            </div>
+            <p> Business Process Analysis, Workflow Optimization , Odoo</p>
+        </div>
     </div>
-
+    
     <!-- Additional Skills -->
     <div class="additional-skills">
-        
         <div class="skill-category">
-            <h4> Soft Skills</h4>
+            <h4>Soft Skills & Professional Competencies</h4>
             <div class="skill-tags">
-                  <span class="skill-tag">Business Acumen</span>
-                    <span class="skill-tag">Requirements Gathering</span>
+                <span class="skill-tag">Business Acumen</span>
+                <span class="skill-tag">Requirements Gathering</span>
                 <span class="skill-tag">System Thinking</span>
-                         <span class="skill-tag">Team  Collaboration </span>
+                <span class="skill-tag">Team Collaboration</span>
                 <span class="skill-tag">Communication</span>
                 <span class="skill-tag">Adaptability</span>
-       
+            
             </div>
         </div>
     </div>
@@ -1309,4 +1438,3 @@ Designed Marketopia, a user-friendly web platform connecting professionals and u
     </footer>
 </body>
 </html>
-
